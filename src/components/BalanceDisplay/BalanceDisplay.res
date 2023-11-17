@@ -1,3 +1,4 @@
+open Store;
 %%raw(`import './BalanceDisplay.css';`)
 
 @react.component
@@ -12,7 +13,7 @@ let make = (~expenses: list<ExpenseEntity.t>) => {
     ->Belt.List.reduce(0.0, (acc, item) => acc +. item.amount)
 
   <div className="balanceContainer">
-    <p className="balanceTitle"> {React.string("Your Balance")} </p>
+    <p className="balanceTitle"> {React.string(balanceDashboard)} </p>
     <p className="balanceValue">
       {React.string("$")}
       {React.string(totalExpense > totalIncome ? "-" : "")}
@@ -25,20 +26,18 @@ let make = (~expenses: list<ExpenseEntity.t>) => {
     <div className="balanceDashboard">
       <div className="incomeData">
         <p className="dashboardLabel">
-          {React.string("Income")}
+          {React.string(incomeLabel)}
         </p>
         <p className="dashboardValue">
-          {React.string("$")}
-          {React.float(totalIncome)}
+          {React.string("$" ++ Js.Float.toString(totalIncome))}
         </p>
       </div>
       <div className="expenseData">
         <p className="dashboardLabel">
-          {React.string("Expense")}
+          {React.string(expenseLabel)}
         </p>
         <p className="dashboardValue">
-          {React.string("$")}
-          {React.float(totalExpense)}
+          {React.string("$" ++ Js.Float.toString(totalExpense))}
         </p>
       </div>
     </div>

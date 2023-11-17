@@ -27,8 +27,12 @@ o BalanceDisplay.cmi : cp ../bs/src/components/BalanceDisplay/BalanceDisplay.cmi
 o BalanceDisplay.cmj : cp ../bs/src/components/BalanceDisplay/BalanceDisplay.cmj
 o BalanceDisplay.cmt : cp ../bs/src/components/BalanceDisplay/BalanceDisplay.cmt
 o BalanceDisplay.res : cp ../../src/components/BalanceDisplay/BalanceDisplay.res
+o Store.cmi : cp ../bs/src/utils/Store.cmi
+o Store.cmj : cp ../bs/src/utils/Store.cmj
+o Store.cmt : cp ../bs/src/utils/Store.cmt
+o Store.res : cp ../../src/utils/Store.res
 o ExpenseEntity.cmi : cp ../bs/src/types/ExpenseEntity.cmi
 o ExpenseEntity.cmj : cp ../bs/src/types/ExpenseEntity.cmj
 o ExpenseEntity.cmt : cp ../bs/src/types/ExpenseEntity.cmt
 o ExpenseEntity.res : cp ../../src/types/ExpenseEntity.res
-build install.stamp : touch App.cmi App.cmj index.cmi index.cmj Header.cmi Header.cmj AddTransaction.cmi AddTransaction.cmj ExpenseHistory.cmi ExpenseHistory.cmj BalanceDisplay.cmi BalanceDisplay.cmj ExpenseEntity.cmi ExpenseEntity.cmj 
+build install.stamp : touch App.cmi App.cmj index.cmi index.cmj Header.cmi Header.cmj AddTransaction.cmi AddTransaction.cmj ExpenseHistory.cmi ExpenseHistory.cmj BalanceDisplay.cmi BalanceDisplay.cmj Store.cmi Store.cmj ExpenseEntity.cmi ExpenseEntity.cmj 

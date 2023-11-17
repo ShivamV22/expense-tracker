@@ -1,3 +1,4 @@
+open Store;
 %%raw(`import './AddTransaction.css'`)
 
 @react.component
@@ -37,15 +38,15 @@ let make = (~setExpenses: (list<ExpenseEntity.t> => list<ExpenseEntity.t>) => un
 
   <div className="transactionContainer">
     <div className="transactionLabel">
-      <p>{React.string("Add new transaction")}</p>
+      <p>{React.string(addTransactionLabel)}</p>
     </div>
     <div className="inputContainer">
-      <p>{React.string("Text")}</p>
+      <p>{React.string(addTextInputLabel)}</p>
       <input placeholder="Enter text..." onChange={onTitleChange} value={title} />
     </div>
     <div className="inputContainer">
-      <p>{React.string("Amount")}</p>
-      <p>{React.string("(negative - expense, positive - income)")}</p>
+      <p>{React.string(addAmountInputLabel)}</p>
+      <p>{React.string(addAmountInputLabel)}</p>
       <input placeholder="Enter amount..." onChange={onAmountChange} value={text} />
     </div>
     <button onClick className="submitBtn"> {React.string("Add transaction")} </button>

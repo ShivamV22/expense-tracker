@@ -1,10 +1,11 @@
+open Store;
 %%raw(`import './ExpenseHistory.css';`)
 
 @react.component
 let make = (~expenses: list<ExpenseEntity.t>) => {
   <div className="historyContainer">
     <div className="historyLabel">
-      <p> {React.string("History")} </p>
+      <p> {React.string(historyLabel)} </p>
     </div>
     <div className="historyItems">
       {React.array(

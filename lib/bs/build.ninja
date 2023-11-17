@@ -1,14 +1,14 @@
 rescript = 1
-g_finger := /Users/shivamverma/Desktop/react-webpack-rescript/node_modules/@rescript/react/lib/ocaml/install.stamp
+g_finger := /Users/shivamverma/Desktop/expense-tracker/node_modules/@rescript/react/lib/ocaml/install.stamp
 rule astj
-  command = /Users/shivamverma/Desktop/react-webpack-rescript/node_modules/rescript/darwinarm64/bsc.exe  -bs-v 10.1.4 -bs-jsx 4 -bs-jsx-mode classic  -absname -bs-ast -o $out $i
+  command = /Users/shivamverma/Desktop/expense-tracker/node_modules/rescript/darwinarm64/bsc.exe  -bs-v 10.1.4 -bs-jsx 4 -bs-jsx-mode classic  -absname -bs-ast -o $out $i
 o src/App.ast : astj ../../src/App.res
 rule deps
-  command = /Users/shivamverma/Desktop/react-webpack-rescript/node_modules/rescript/darwinarm64/bsb_helper.exe -hash ef9963e8296aaadcf7f53392a685d999 $in
+  command = /Users/shivamverma/Desktop/expense-tracker/node_modules/rescript/darwinarm64/bsb_helper.exe -hash 478300ba766c1c087257c7d69f66af93 $in
   restat = 1
 o src/App.d : deps src/App.ast
 rule mij
-  command = /Users/shivamverma/Desktop/react-webpack-rescript/node_modules/rescript/darwinarm64/bsc.exe -I src/types -I src/components/BalanceDisplay -I src/components/ExpenseHistory -I src/components/AddTransaction -I src/components/Header -I src/components -I src -I /Users/shivamverma/Desktop/react-webpack-rescript/node_modules/@rescript/react/lib/ocaml   -bs-package-name your-project-name -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
+  command = /Users/shivamverma/Desktop/expense-tracker/node_modules/rescript/darwinarm64/bsc.exe -I src/types -I src/utils -I src/components/BalanceDisplay -I src/components/ExpenseHistory -I src/components/AddTransaction -I src/components/Header -I src/components -I src -I /Users/shivamverma/Desktop/expense-tracker/node_modules/@rescript/react/lib/ocaml   -bs-package-name your-project-name -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
   dyndep = 1
   restat = 1
 o src/App.cmj src/App.cmi ../../src/App.bs.js : mij src/App.ast
@@ -27,6 +27,9 @@ o src/components/ExpenseHistory/ExpenseHistory.cmj src/components/ExpenseHistory
 o src/components/BalanceDisplay/BalanceDisplay.ast : astj ../../src/components/BalanceDisplay/BalanceDisplay.res
 o src/components/BalanceDisplay/BalanceDisplay.d : deps src/components/BalanceDisplay/BalanceDisplay.ast
 o src/components/BalanceDisplay/BalanceDisplay.cmj src/components/BalanceDisplay/BalanceDisplay.cmi ../../src/components/BalanceDisplay/BalanceDisplay.bs.js : mij src/components/BalanceDisplay/BalanceDisplay.ast
+o src/utils/Store.ast : astj ../../src/utils/Store.res
+o src/utils/Store.d : deps src/utils/Store.ast
+o src/utils/Store.cmj src/utils/Store.cmi ../../src/utils/Store.bs.js : mij src/utils/Store.ast
 o src/types/ExpenseEntity.ast : astj ../../src/types/ExpenseEntity.res
 o src/types/ExpenseEntity.d : deps src/types/ExpenseEntity.ast
 o src/types/ExpenseEntity.cmj src/types/ExpenseEntity.cmi ../../src/types/ExpenseEntity.bs.js : mij src/types/ExpenseEntity.ast

@@ -1,10 +1,11 @@
+open Store;
 %%raw(`import './Header.css';`)
 
 @react.component
 let make = () => {
   <header className="header">
     <p>
-      {React.string("Expense Tracker")}
+      {React.string(headerLabel)}
     </p>
   </header>
 }
