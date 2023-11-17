@@ -1,0 +1,9 @@
+let addTransactionLabel = "Add new transaction";
+let balanceDashboard = "Your Balance";
+let incomeLabel = "Income";
+let expenseLabel = "Expense";
+let historyLabel = "History";
+let headerLabel = "Expense Tracker";
+let addTextInputLabel = "Text";
+let addAmountInputLabel = "Amount";
+let addAmountInputInfo = "(negative - expense, positive - income)";

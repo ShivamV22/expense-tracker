@@ -1,0 +1,35 @@
+rescript = 1
+g_finger := /Users/shivamverma/Desktop/expense-tracker/node_modules/@rescript/react/lib/ocaml/install.stamp
+rule astj
+  command = /Users/shivamverma/Desktop/expense-tracker/node_modules/rescript/darwinarm64/bsc.exe  -bs-v 10.1.4 -bs-jsx 4 -bs-jsx-mode classic  -absname -bs-ast -o $out $i
+o src/App.ast : astj ../../src/App.res
+rule deps
+  command = /Users/shivamverma/Desktop/expense-tracker/node_modules/rescript/darwinarm64/bsb_helper.exe -hash 478300ba766c1c087257c7d69f66af93 $in
+  restat = 1
+o src/App.d : deps src/App.ast
+rule mij
+  command = /Users/shivamverma/Desktop/expense-tracker/node_modules/rescript/darwinarm64/bsc.exe -I src/types -I src/utils -I src/components/BalanceDisplay -I src/components/ExpenseHistory -I src/components/AddTransaction -I src/components/Header -I src/components -I src -I /Users/shivamverma/Desktop/expense-tracker/node_modules/@rescript/react/lib/ocaml   -bs-package-name your-project-name -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src/App.cmj src/App.cmi ../../src/App.bs.js : mij src/App.ast
+o src/index.ast : astj ../../src/index.res
+o src/index.d : deps src/index.ast
+o src/index.cmj src/index.cmi ../../src/index.bs.js : mij src/index.ast
+o src/components/Header/Header.ast : astj ../../src/components/Header/Header.res
+o src/components/Header/Header.d : deps src/components/Header/Header.ast
+o src/components/Header/Header.cmj src/components/Header/Header.cmi ../../src/components/Header/Header.bs.js : mij src/components/Header/Header.ast
+o src/components/AddTransaction/AddTransaction.ast : astj ../../src/components/AddTransaction/AddTransaction.res
+o src/components/AddTransaction/AddTransaction.d : deps src/components/AddTransaction/AddTransaction.ast
+o src/components/AddTransaction/AddTransaction.cmj src/components/AddTransaction/AddTransaction.cmi ../../src/components/AddTransaction/AddTransaction.bs.js : mij src/components/AddTransaction/AddTransaction.ast
+o src/components/ExpenseHistory/ExpenseHistory.ast : astj ../../src/components/ExpenseHistory/ExpenseHistory.res
+o src/components/ExpenseHistory/ExpenseHistory.d : deps src/components/ExpenseHistory/ExpenseHistory.ast
+o src/components/ExpenseHistory/ExpenseHistory.cmj src/components/ExpenseHistory/ExpenseHistory.cmi ../../src/components/ExpenseHistory/ExpenseHistory.bs.js : mij src/components/ExpenseHistory/ExpenseHistory.ast
+o src/components/BalanceDisplay/BalanceDisplay.ast : astj ../../src/components/BalanceDisplay/BalanceDisplay.res
+o src/components/BalanceDisplay/BalanceDisplay.d : deps src/components/BalanceDisplay/BalanceDisplay.ast
+o src/components/BalanceDisplay/BalanceDisplay.cmj src/components/BalanceDisplay/BalanceDisplay.cmi ../../src/components/BalanceDisplay/BalanceDisplay.bs.js : mij src/components/BalanceDisplay/BalanceDisplay.ast
+o src/utils/Store.ast : astj ../../src/utils/Store.res
+o src/utils/Store.d : deps src/utils/Store.ast
+o src/utils/Store.cmj src/utils/Store.cmi ../../src/utils/Store.bs.js : mij src/utils/Store.ast
+o src/types/ExpenseEntity.ast : astj ../../src/types/ExpenseEntity.res
+o src/types/ExpenseEntity.d : deps src/types/ExpenseEntity.ast
+o src/types/ExpenseEntity.cmj src/types/ExpenseEntity.cmi ../../src/types/ExpenseEntity.bs.js : mij src/types/ExpenseEntity.ast

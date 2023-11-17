@@ -1,0 +1,14 @@
+#Start(1700207268167)
+
+  Warning number 3
+  /Users/shivamverma/Desktop/expense-tracker/src/index.res:7:17-31
+
+  5 │ switch rootQuery {
+  6 │ | None => ()
+  7 │ | Some(root) => ReactDOM.render(<App />, root)
+  8 │ }
+
+  deprecated: ReactDOM.render
+  ReactDOM.render is no longer supported in React 18. Use ReactDOM.Client.createRoot instead.
+
+#Done(1700207268243)

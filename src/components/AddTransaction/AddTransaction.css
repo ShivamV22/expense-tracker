@@ -1,0 +1,29 @@
+.transactionContainer {
+  margin-top: 1.5rem;
+}
+
+.transactionLabel {
+  border-bottom: 1px solid #e2e2e2;
+  padding-bottom: 0.5rem;
+}
+
+.inputContainer {
+  margin: 1rem 0;
+}
+
+.inputContainer > input {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.submitBtn {
+  width: 100%;
+  height: 40px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  background-color: rgb(102, 59, 243);
+  color: #fff;
+  text-transform: uppercase;
+}
