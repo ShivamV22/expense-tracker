@@ -1,0 +1,34 @@
+rescript = 1
+rule cp
+  command = cp $i $out
+rule touch
+ command = touch $out
+o App.cmi : cp ../bs/src/App.cmi
+o App.cmj : cp ../bs/src/App.cmj
+o App.cmt : cp ../bs/src/App.cmt
+o App.res : cp ../../src/App.res
+o index.cmi : cp ../bs/src/index.cmi
+o index.cmj : cp ../bs/src/index.cmj
+o index.cmt : cp ../bs/src/index.cmt
+o index.res : cp ../../src/index.res
+o Header.cmi : cp ../bs/src/components/Header/Header.cmi
+o Header.cmj : cp ../bs/src/components/Header/Header.cmj
+o Header.cmt : cp ../bs/src/components/Header/Header.cmt
+o Header.res : cp ../../src/components/Header/Header.res
+o AddTransaction.cmi : cp ../bs/src/components/AddTransaction/AddTransaction.cmi
+o AddTransaction.cmj : cp ../bs/src/components/AddTransaction/AddTransaction.cmj
+o AddTransaction.cmt : cp ../bs/src/components/AddTransaction/AddTransaction.cmt
+o AddTransaction.res : cp ../../src/components/AddTransaction/AddTransaction.res
+o ExpenseHistory.cmi : cp ../bs/src/components/ExpenseHistory/ExpenseHistory.cmi
+o ExpenseHistory.cmj : cp ../bs/src/components/ExpenseHistory/ExpenseHistory.cmj
+o ExpenseHistory.cmt : cp ../bs/src/components/ExpenseHistory/ExpenseHistory.cmt
+o ExpenseHistory.res : cp ../../src/components/ExpenseHistory/ExpenseHistory.res
+o BalanceDisplay.cmi : cp ../bs/src/components/BalanceDisplay/BalanceDisplay.cmi
+o BalanceDisplay.cmj : cp ../bs/src/components/BalanceDisplay/BalanceDisplay.cmj
+o BalanceDisplay.cmt : cp ../bs/src/components/BalanceDisplay/BalanceDisplay.cmt
+o BalanceDisplay.res : cp ../../src/components/BalanceDisplay/BalanceDisplay.res
+o ExpenseEntity.cmi : cp ../bs/src/types/ExpenseEntity.cmi
+o ExpenseEntity.cmj : cp ../bs/src/types/ExpenseEntity.cmj
+o ExpenseEntity.cmt : cp ../bs/src/types/ExpenseEntity.cmt
+o ExpenseEntity.res : cp ../../src/types/ExpenseEntity.res
+build install.stamp : touch App.cmi App.cmj index.cmi index.cmj Header.cmi Header.cmj AddTransaction.cmi AddTransaction.cmj ExpenseHistory.cmi ExpenseHistory.cmj BalanceDisplay.cmi BalanceDisplay.cmj ExpenseEntity.cmi ExpenseEntity.cmj 
